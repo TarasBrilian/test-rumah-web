@@ -2,9 +2,9 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-# Room Booking API
+# User management api
 
-A NestJS-based backend for managing room bookings, user authentication, and profile management.
+A NestJS-based backend for managing user authentication, and profile management.
 
 ## Prerequisites
 
