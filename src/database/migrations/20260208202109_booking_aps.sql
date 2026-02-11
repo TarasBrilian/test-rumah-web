@@ -1,0 +1,18 @@
+-- +goose Up
+BEGIN;
+
+CREATE TABLE users (
+    id UUID PRIMARY KEY NOT NULL DEFAULT gen_random_uuid(),
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+COMMIT;
+
+-- +goose Down
+BEGIN;
+DROP TABLE IF EXISTS users;
+COMMIT;
