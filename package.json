@@ -20,7 +20,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "db": "ts-node src/database/scripts/db.ts"
+    "db": "ts-node src/database/scripts/db.ts",
+    "swagger": "node swagger-server.js"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",

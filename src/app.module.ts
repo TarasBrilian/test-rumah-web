@@ -4,6 +4,7 @@ import { AuthModule } from './auth/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from './auth/auth.guard';
+import { SwaggerController } from './swagger.controller';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -12,7 +13,7 @@ import { AuthGuard } from './auth/auth.guard';
     autoLoadEntities: true,
     synchronize: false,
   }), UsersModule, AuthModule],
-  controllers: [],
+  controllers: [SwaggerController],
   providers: [
     {
       provide: APP_GUARD,

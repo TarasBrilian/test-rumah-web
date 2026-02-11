@@ -66,6 +66,11 @@ pnpm run start:prod
 - `POST /auth/login`: Login and receive access token.
 - `GET /users`: List all users (paginated).
 - `PUT /users/:id`: Update user information.
+- `DELETE /users/id`: Delete user.
+
+## Docs API:
+
+- `localhost:3000/docs`: Docs API.
 
 
 ## License
