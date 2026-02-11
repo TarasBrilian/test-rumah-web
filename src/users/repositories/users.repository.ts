@@ -15,18 +15,22 @@ export class UsersRepository {
     }
 
     async createUser(name: string, email: string, password: string): Promise<User> {
-        const user = this.userRepository.create({ name, email, password });
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const user = this.userRepository.create({ name, email, password: hashedPassword });
         return this.userRepository.save(user);
     }
 
     async validateUser(email: string, password: string): Promise<User> {
+        if (!email || !password) {
+            throw new BadRequestException("Email and password are required");
+        }
         const user = await this.userRepository.findOneBy({ email });
-        if (!user) {
-            throw new BadRequestException("User not found");
+        if (!user || !user.password) {
+            throw new BadRequestException("Invalid credentials");
         }
         const isPasswordMatch = await bcrypt.compare(password, user.password);
         if (!isPasswordMatch) {
-            throw new BadRequestException("Invalid password");
+            throw new BadRequestException("Invalid credentials");
         }
         return user;
     }

@@ -13,12 +13,6 @@ export class UsersController {
         return this.userService.createUser(name, email, password);
     }
 
-    @Post("login")
-    async login(@Body() body: any) {
-        const { email, password } = body;
-        return this.userService.validateUser(email, password);
-    }
-
     @Get()
     async getAllUsers(@Query() query: any) {
         return this.userService.getAllUsers(query);

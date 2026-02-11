@@ -1,0 +1,172 @@
+{
+  "info": {
+    "_postman_id": "6cd5d056-d439-45d7-a62a-665fb52f41a5",
+    "name": "Rumah web test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get all users",
+      "id": "dde1db33-cc78-4816-8a40-e16d477a00a5",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMGEzNGNmNC0wNzg0LTRmNGQtYjVkOS0xZDBkZDY5MmUxYjMiLCJlbWFpbCI6ImhhYmliaWJhYmFiYUBleGFtcGxlLmNvbSIsImlhdCI6MTc3MDc4Mjc4NSwiZXhwIjoxNzcwNzg2Mzg1fQ.z1jO5Fo53DtE00uO9RnPA1dbXI6qn-NouHiNE6Qg-NI",
+            "type": "text",
+            "uuid": "9fef1740-b68e-44c5-83f1-336f16422318"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"habibi@example.com\",\n    \"password\": \"abc123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register user",
+      "id": "1ded4953-e9b0-488a-a499-3ab06c4f6a05",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"1bababab\",\n    \"email\": \"habibibababa@example.com\",\n    \"password\": \"abc12344\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login user",
+      "id": "994af4ea-e927-4210-aac6-3d97a3fa2618",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"habibibababa@example.com\",\n    \"password\": \"abc12344\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Edit users",
+      "id": "f303b7ab-4270-47a5-901e-16caf409921f",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"password\": \"justnewpass\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/users/e1542f1e-5584-451b-80dd-617d22edc0c0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "users",
+            "e1542f1e-5584-451b-80dd-617d22edc0c0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get detail users",
+      "id": "6e3305ee-0a85-4d58-a04e-60876cbb6c35",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/users/e1542f1e-5584-451b-80dd-617d22edc0c0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "users",
+            "e1542f1e-5584-451b-80dd-617d22edc0c0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete user",
+      "id": "8726a9c2-0409-4459-93e6-a93d13d38f47",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/users/e8dfa1c9-4491-4131-9c59-cd1381f3516f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "users",
+            "e8dfa1c9-4491-4131-9c59-cd1381f3516f"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

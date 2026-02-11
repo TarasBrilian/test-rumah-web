@@ -13,9 +13,7 @@ export class UsersService {
             throw new BadRequestException("User already exists");
         }
 
-        const hashedPassword = await bcrypt.hash(password, 10);
-
-        const user = this.userRepository.createUser(name, email, hashedPassword);
+        const user = this.userRepository.createUser(name, email, password);
 
         return user;
     }
